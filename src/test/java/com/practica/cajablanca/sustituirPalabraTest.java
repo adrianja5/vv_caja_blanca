@@ -1,6 +1,7 @@
 package com.practica.cajablanca;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -17,7 +18,6 @@ class sustituirPalabraTest {
 	private final String textoVacio = "./src/test/java/com/practica/cajablanca/ficheros/textoVacio.txt";
 	private final String textoEspacio = "./src/test/java/com/practica/cajablanca/ficheros/textoEspacio.txt";
 	private final String textoUnaPalabra = "./src/test/java/com/practica/cajablanca/ficheros/textoUnaPalabra.txt";
-	private final String textoDosPalabrasMayorMenor = "./src/test/java/com/practica/cajablanca/ficheros/textoDosPalabrasMayorMenor.txt";
 	private final String textoDosLineasEspacios = "./src/test/java/com/practica/cajablanca/ficheros/textoDosLineasEspacios.txt";
 
 	@BeforeEach()
