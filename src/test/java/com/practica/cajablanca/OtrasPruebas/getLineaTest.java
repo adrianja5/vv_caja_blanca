@@ -1,29 +1,23 @@
-package com.practica.cajablanca;
+package com.practica.cajablanca.OtrasPruebas;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import com.cajanegra.EmptyCollectionException;
+import com.practica.cajablanca.Editor;
 
-class leerFicheroTest {
+class getLineaTest {
 
 	private final String ficherosPath = "./src/test/java/com/practica/cajablanca/ficheros/";
 
 	@Test
-	void leerFicheroVacioTest() {
-		Editor editor = new Editor();
-		editor.leerFichero(ficherosPath + "textoVacio.txt");
-
-		assertEquals(0, editor.size());
-	}
-
-	@Test
-	void leerFicheroUnaPalabraTest() {
+	void getLineaUnaPalabraTest() {
 		Editor editor = new Editor();
 		editor.leerFichero(ficherosPath + "textoUnaPalabra.txt");
-
-		assertEquals(1, editor.size());
 
 		try {
 			assertEquals("[hola]", editor.getLinea(1).toString());
@@ -33,11 +27,9 @@ class leerFicheroTest {
 	}
 
 	@Test
-	void leerFicheroDosPalabrasTest() {
+	void getLineaDosPalabrasTest() {
 		Editor editor = new Editor();
 		editor.leerFichero(ficherosPath + "textoDosPalabrasMenorMayor.txt");
-
-		assertEquals(1, editor.size());
 
 		try {
 			assertEquals("[hola, adios]", editor.getLinea(1).toString());
@@ -47,11 +39,9 @@ class leerFicheroTest {
 	}
 
 	@Test
-	void leerFicheroDosLineasTest() {
+	void getLineaDosLineasTest() {
 		Editor editor = new Editor();
 		editor.leerFichero(ficherosPath + "textoDosLineasIguales.txt");
-
-		assertEquals(2, editor.size());
 
 		try {
 			assertEquals("[hola]", editor.getLinea(1).toString());
@@ -62,16 +52,24 @@ class leerFicheroTest {
 	}
 
 	@Test
-	void leerFicheroUnEspacioTest() {
+	void getLineaVacioTest() {
 		Editor editor = new Editor();
-		editor.leerFichero(ficherosPath + "textoEspacio.txt");
+		editor.leerFichero(ficherosPath + "textoVacio.txt");
 
-		assertEquals(1, editor.size());
-
-		try {
-			assertEquals("[]", editor.getLinea(1).toString());
-		} catch (EmptyCollectionException e) {
-			e.printStackTrace();
-		}
+		assertThrows(EmptyCollectionException.class, () -> {
+			editor.getLinea(1);
+		});
 	}
+
+	@ParameterizedTest(name = "[{index}] -> linea={0}")
+	@CsvSource({ "0", "2", })
+	void getLineaLineaErroneaTest(int linea) {
+		Editor editor = new Editor();
+		editor.leerFichero(ficherosPath + "textoUnaPalabra.txt");
+
+		assertThrows(IllegalArgumentException.class, () -> {
+			editor.getLinea(linea);
+		});
+	}
+
 }

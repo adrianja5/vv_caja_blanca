@@ -1,9 +1,11 @@
-package com.practica.cajablanca;
+package com.practica.cajablanca.OtrasPruebas;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import com.practica.cajablanca.Editor;
 
 class sizeTest {
 

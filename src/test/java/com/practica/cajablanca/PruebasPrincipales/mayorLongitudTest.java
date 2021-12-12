@@ -1,4 +1,4 @@
-package com.practica.cajablanca;
+package com.practica.cajablanca.PruebasPrincipales;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 
 import com.cajanegra.EmptyCollectionException;
+import com.practica.cajablanca.Editor;
 
 class mayorLongitudTest {
 
