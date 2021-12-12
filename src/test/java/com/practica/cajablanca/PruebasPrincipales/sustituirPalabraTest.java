@@ -79,7 +79,7 @@ class sustituirPalabraTest {
 	@Tag(textoUnaPalabra)
 	void sustituirPalabra4() {
 		String palabra = "noEsHola";
-		String nuevaPalabra = "adios";
+		String nuevaPalabra = "cualquiera";
 		String expectedLinea = "[hola]";
 		
 		editor.sustituirPalabra(palabra, nuevaPalabra);
