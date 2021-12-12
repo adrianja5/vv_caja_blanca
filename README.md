@@ -1,15 +1,15 @@
-# Práctica caja negra 
+# Práctica caja blanca 
 **GRUPO**: IWT-41 Grupo 5
 
 ## Instrucciones para la ejecución de la práctica.
 
 1. Se deberá tener instalado Maven en el ordenador así como tener debidamente configuradas las variables de entorno[^1].
-2. TODO
-3. A través de la línea de comandos navegaremos hasta el directorio dónde se encuentra nuestro proyecto haciendo uso del comando `cd`, por ejemplo `cd vv_caja_blanca`
+2. Será necesario instalar manualmente, si no está instalado, el paquete `SingleList.jar`. Esto puede hacerse con el comando: `mvn install:install-file '-Dfile=.\lib\SingleList.jar' '-DgroupId=com.singleList' '-DartifactId=SingleList' '-Dversion=0.0.1-SNAPSHOT' '-Dpackaging=jar'`.
+3. A través de la línea de comandos navegaremos hasta el directorio dónde se encuentra nuestro proyecto haciendo uso del comando `cd`, por ejemplo `cd vv_caja_blanca`.
 4. Una vez estemos dentro del directorio deseado deberemos ejecutar los siguientes comandos para ejecutar los test:
-  >- 3.1- `mvn clean`
-  >- 3.2- `mvn compile`
-  >- 3.3- `mvn test`
+  >- 4.1- `mvn clean`
+  >- 4.2- `mvn compile`
+  >- 4.3- `mvn test`
 
 Con Maven se pueden ejecutar las pruebas de los paquetes de Java por separado. Así, como se han usado dos paquetes distintos, se pueden ejecutar los comandos:
   - `mvn '-Dtest=com.practica.cajablanca.PruebasPrincipales.*Test' test` para realizar las pruebas de `PruebasPrincipales`.
